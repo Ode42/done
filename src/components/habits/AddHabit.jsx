@@ -1,13 +1,29 @@
 import { useState } from "react";
 
-const AddHabit = () => {
+const AddHabit = (props) => {
+  const [name, setName] = useState("");
+
+  const addHabitButtonPressed = () => {
+    props.addHabit({
+      name: name,
+    });
+    setName("");
+  };
+
   return (
     <div className="addHabit">
       <h1>Add habit</h1>
       <form>
-        <label for="name">Habit name: </label>
-        <input name="name" />
-        <button type="button">Send habit</button>
+        <label for="name-field">Habit name: </label>
+        <input
+          id="name-field"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <button type="button" onClick={addHabitButtonPressed}>
+          Add habit
+        </button>
       </form>
     </div>
   );

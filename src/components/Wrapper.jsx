@@ -3,18 +3,20 @@ import ShowHabits from "./habits/ShowHabits";
 import { useState } from "react";
 
 const Wrapper = () => {
-  const [habits, setHabits] = useState([]);
+  const [data, setData] = useState({ habits: [] });
 
-  const addHabit = (habit) => {
-    const newHabits = habits;
-    newHabits.push(habit);
-    setHabits(newHabits);
+  const addHabitToData = (habit) => {
+    let habits = data["habits"];
+    habit.id = habits.length;
+    habits.push(habit);
+    setData({ habits: habits });
+    console.log(data);
   };
 
   return (
     <div>
-      <AddHabit habits={habits} />
-      <ShowHabits callback={addHabit} />
+      <AddHabit addHabit={addHabitToData} />
+      <ShowHabits />
     </div>
   );
 };
