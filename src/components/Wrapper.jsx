@@ -16,7 +16,7 @@ const Wrapper = () => {
   return (
     <div>
       <AddHabit addHabit={addHabitToData} />
-      <ShowHabits />
+      <ShowHabits habits={data.habits} />
     </div>
   );
 };
