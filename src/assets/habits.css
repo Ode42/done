@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.wrapper > * {
+  padding: 2%;
+  width: 40%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.addHabit {
+  background-color: aliceblue;
+}
+
+.showHabits {
+  background-color: rgb(212, 191, 231);
+}

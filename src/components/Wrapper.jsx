@@ -1,6 +1,7 @@
 import AddHabit from "./habits/AddHabit";
 import ShowHabits from "./habits/ShowHabits";
 import { useState } from "react";
+import "./../assets/habits.css";
 
 const Wrapper = () => {
   const [data, setData] = useState({ habits: [] });
@@ -14,9 +15,9 @@ const Wrapper = () => {
   };
 
   return (
-    <div>
-      <AddHabit addHabit={addHabitToData} />
+    <div className="wrapper">
       <ShowHabits habits={data.habits} />
+      <AddHabit addHabit={addHabitToData} />
     </div>
   );
 };
